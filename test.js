@@ -1,30 +1,5 @@
-# Astar Web3 Domains
-
-Nodejs SDK
-
-Npm: https://www.npmjs.com/package/astrdomainjs-web3
-
-Github: https://github.com/AstarDomains/astrdomainjs-web3
-
-Before installing the package you need to check and be sure to install the packages below:
-
-```
-npm install web3 
-```
-
-Install Package
-
-```
-npm install astrdomainjs-web3
-```
-
-Call 
-```
 const domainjs = require('astrdomainjs-web3');
-```
-
-Set config
-```
+// set config
 const config = 
 {
 	testnet:{
@@ -37,12 +12,12 @@ const config =
 	},
 	defaultNetwork: "mainnet"
 }
-```
 
-Install
+call();
 
-```
-   // install
+async function call(){
+	
+	// install
 	const sdk = domainjs.SDK(config);
 
 	// change your domains
@@ -59,7 +34,7 @@ Install
 	// get total domains
 	const balance = await sdk.balanceOf(_address);
 
-	console.log(balance);
+	console.log(balance.toString());
 
 	// get a domain default from a user's address, requiring the user to set the default domain name initially.
 	const domain = await sdk.getDomain(_address);
@@ -84,12 +59,6 @@ Install
 	//namehash is a recursive process that can generate a unique hash for any valid domain name.
 	const hashname = await sdk.hashname(_domain);
 
-	console.log(hashname);
-```
-
-Pls update test.js for specific instructions
-
-Thanks!
-
-
+	console.log(hashname.toString());
+}
 
